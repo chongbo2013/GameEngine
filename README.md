@@ -1,2 +1,1 @@
-# MyLibgdxTest
-libgdx study
+libgdx 3d demo test
