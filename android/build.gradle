@@ -1,6 +1,6 @@
 android {
-    buildToolsVersion "24.0.0"
     compileSdkVersion 23
+    buildToolsVersion "23.0.0"
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -19,8 +19,8 @@ android {
     }
     defaultConfig {
         applicationId "com.mygdx.game"
-        minSdkVersion 8
-        targetSdkVersion 23
+        minSdkVersion 9
+        targetSdkVersion 22
     }
 }
 
@@ -126,4 +126,8 @@ idea {
             }
         }
     }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.4.0'
 }
