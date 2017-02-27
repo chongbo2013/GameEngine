@@ -73,6 +73,7 @@ import com.badlogic.gdx.tests.gles2.HelloTriangle;
 import com.badlogic.gdx.tests.gles2.SimpleVertexShader;
 import com.badlogic.gdx.tests.net.NetAPITest;
 import com.badlogic.gdx.tests.superkoalio.SuperKoalio;
+import com.badlogic.gdx.themetest.SpineTest1;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.StreamUtils;
 
@@ -81,7 +82,7 @@ import com.badlogic.gdx.utils.StreamUtils;
  * @author badlogicgames@gmail.com */
 public class GdxTests {
 	public static final List<Class<? extends GdxTest>> tests = new ArrayList<Class<? extends GdxTest>>(Arrays.asList(
-		// @off
+			SpineTest1.class,
 		IssueTest.class,
 		AccelerometerTest.class,
 		ActionSequenceTest.class,

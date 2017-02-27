@@ -60,7 +60,7 @@ public class ParticleEmittersTest extends GdxTest {
 		spriteBatch = new SpriteBatch();
 
 		effect = new ParticleEffect();
-		effect.load(Gdx.files.internal("data/singleTextureAllAdditive.p"), Gdx.files.internal("data"));
+		effect.load(Gdx.files.internal("data/ufo_tail.p"), Gdx.files.internal("data"));
 		effect.setPosition(Gdx.graphics.getWidth() / 2, Gdx.graphics.getHeight() / 2);
 		effectPool = new ParticleEffectPool(effect, 20, 20);
 
