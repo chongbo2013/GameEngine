@@ -58,7 +58,7 @@ public class Skeleton {
 	final Color color;
 	float time;
 	boolean flipX, flipY;
-	public float x, y;
+	float x, y;
 
 	public Skeleton (SkeletonData data) {
 		if (data == null) throw new IllegalArgumentException("data cannot be null.");

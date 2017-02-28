@@ -73,6 +73,13 @@ import com.badlogic.gdx.tests.gles2.HelloTriangle;
 import com.badlogic.gdx.tests.gles2.SimpleVertexShader;
 import com.badlogic.gdx.tests.net.NetAPITest;
 import com.badlogic.gdx.tests.superkoalio.SuperKoalio;
+import com.badlogic.gdx.themetest.SpineMixTest;
+import com.badlogic.gdx.themetest.SpineNormalMapTest;
+import com.badlogic.gdx.themetest.SpinePineBox2DExample;
+import com.badlogic.gdx.themetest.SpineSimpleTest1;
+import com.badlogic.gdx.themetest.SpineSimpleTest2;
+import com.badlogic.gdx.themetest.SpineSimpleTest3;
+import com.badlogic.gdx.themetest.SpineSkeletonAttachmentTest;
 import com.badlogic.gdx.themetest.SpineTest1;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.StreamUtils;
@@ -83,6 +90,13 @@ import com.badlogic.gdx.utils.StreamUtils;
 public class GdxTests {
 	public static final List<Class<? extends GdxTest>> tests = new ArrayList<Class<? extends GdxTest>>(Arrays.asList(
 			SpineTest1.class,
+			SpineMixTest.class,
+			SpineNormalMapTest.class,
+			SpinePineBox2DExample.class,
+			SpineSimpleTest1.class,
+			SpineSimpleTest2.class,
+			SpineSimpleTest3.class,
+			SpineSkeletonAttachmentTest.class,
 		IssueTest.class,
 		AccelerometerTest.class,
 		ActionSequenceTest.class,

@@ -59,7 +59,7 @@ public class AnimationState {
 	boolean animationsChanged;
 	private float timeScale = 1;
 
-	public Pool<TrackEntry> trackEntryPool = new Pool() {
+	Pool<TrackEntry> trackEntryPool = new Pool() {
 		protected Object newObject () {
 			return new TrackEntry();
 		}
@@ -683,16 +683,16 @@ public class AnimationState {
 	 * <p>
 	 * References to a track entry must not be kept after the {@link AnimationStateListener#dispose(TrackEntry)} event occurs. */
 	static public class TrackEntry implements Poolable {
-		public Animation animation;
-		public TrackEntry next, mixingFrom;
+		Animation animation;
+		TrackEntry next, mixingFrom;
 		AnimationStateListener listener;
-		public int trackIndex;
-		public boolean loop;
-		public float eventThreshold, attachmentThreshold, drawOrderThreshold;
-		public float animationStart, animationEnd, animationLast, nextAnimationLast;
-		public float delay, trackTime, trackLast, nextTrackLast, trackEnd, timeScale;
-		public float alpha, mixTime, mixDuration, mixAlpha;
-		public final BooleanArray timelinesFirst = new BooleanArray();
+		int trackIndex;
+		boolean loop;
+		float eventThreshold, attachmentThreshold, drawOrderThreshold;
+		float animationStart, animationEnd, animationLast, nextAnimationLast;
+		float delay, trackTime, trackLast, nextTrackLast, trackEnd, timeScale;
+		float alpha, mixTime, mixDuration, mixAlpha;
+		final BooleanArray timelinesFirst = new BooleanArray();
 		final FloatArray timelinesRotation = new FloatArray();
 
 		public void reset () {
