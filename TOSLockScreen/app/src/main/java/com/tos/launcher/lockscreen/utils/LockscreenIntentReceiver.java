@@ -5,7 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.tos.launcher.lockscreen.LockScreenActivity;
+import com.tos.launcher.lockscreen.LockScreen3dActivity;
+import com.tos.launcher.lockscreen.MainActivity;
 
 
 public class LockscreenIntentReceiver extends BroadcastReceiver {
@@ -24,7 +25,7 @@ public class LockscreenIntentReceiver extends BroadcastReceiver {
 
     // Display lock screen
     private void start_lockscreen(Context context) {
-        Intent mIntent = new Intent(context, LockScreenActivity.class);
+        Intent mIntent = new Intent(context, LockScreen3dActivity.class);
         mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(mIntent);
     }

@@ -1,83 +1,31 @@
 package com.tos.launcher.lockscreen.utils;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.view.Gravity;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
+import android.app.ActivityManager;
+import android.content.Context;
 
-import com.tos.launcher.lockscreen.R;
+import java.util.List;
 
-
+/**
+ * 锁屏工具封装
+ */
 public class LockscreenUtils {
 
-    // Member variables
-    private OverlayDialog mOverlayDialog;
-    private OnLockStatusChangedListener mLockStatusChangedListener;
 
-    // Interface to communicate with owner activity
-    public interface OnLockStatusChangedListener
-    {
-        public void onLockStatusChanged(boolean isLocked);
-    }
-
-    // Reset the variables
-    public LockscreenUtils() {
-        reset();
-    }
-
-    // Display overlay dialog with a view to prevent home button click
-    public void lock(Activity activity) {
-        if (mOverlayDialog == null) {
-            mOverlayDialog = new OverlayDialog(activity);
-            mOverlayDialog.show();
-            mLockStatusChangedListener = (OnLockStatusChangedListener) activity;
-        }
-    }
-
-    // Reset variables
-    public void reset() {
-        if (mOverlayDialog != null) {
-            mOverlayDialog.dismiss();
-            mOverlayDialog = null;
-        }
-    }
-
-    // Unlock the home button and give callback to unlock the screen
-    public void unlock() {
-        if (mOverlayDialog != null) {
-            mOverlayDialog.dismiss();
-            mOverlayDialog = null;
-            if(mLockStatusChangedListener!=null)
-            {
-                mLockStatusChangedListener.onLockStatusChanged(false);
+    /**
+     * 判断服务是否启动
+     * @param context
+     * @param className
+     * @return
+     */
+    public static boolean serviceIsRunning(Context context,Class className) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningServiceInfo> services = am.getRunningServices(Short.MAX_VALUE);
+        for (ActivityManager.RunningServiceInfo info : services) {
+            if (info.service.getClassName().endsWith(className.getName())) {
+                return true;
             }
         }
+        return false;
     }
 
-    // Create overlay dialog for lockedscreen to disable hardware buttons
-    private static class OverlayDialog extends AlertDialog {
-
-        public OverlayDialog(Activity activity) {
-            super(activity, R.style.OverlayDialog);
-            WindowManager.LayoutParams params = getWindow().getAttributes();
-            params.type = LayoutParams.TYPE_SYSTEM_ERROR;
-            params.dimAmount = 0.0F;
-            params.width = 0;
-            params.height = 0;
-            params.gravity = Gravity.BOTTOM;
-            getWindow().setAttributes(params);
-            getWindow().setFlags(LayoutParams.FLAG_SHOW_WHEN_LOCKED | LayoutParams.FLAG_NOT_TOUCH_MODAL,
-                    0xffffff);
-            setOwnerActivity(activity);
-            setCancelable(false);
-        }
-
-        // consume touch events
-        public final boolean dispatchTouchEvent(MotionEvent motionevent) {
-            return true;
-        }
-
-    }
 }
