@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TOS 3D LockScreen debug</string>
+
+    <string name="instructions">Click on UNLOCK button to unlock the screen</string>
+    <string name="unlock">UNLOCK</string>
+    <string name="accessibility_service_description">TOS 3D Locker</string>
+</resources>

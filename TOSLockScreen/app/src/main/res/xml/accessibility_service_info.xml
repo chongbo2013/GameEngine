@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/accessibility_service_description"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:notificationTimeout="100"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:packageNames="com.poxiao.video"
+    android:settingsActivity="com.tos.launcher.lockscreen"  />
+
+    <!--
+         android:description="@string/accessibility_service_description" 描述
+         android:accessibilityEventTypes="typeAllMask"  事件类型
+         android:accessibilityFeedbackType="feedbackGeneric" 反馈类型，声音、震动等
+         android:canRetrieveWindowContent="true", 允许获取手机页面中的信息
+         android:packageNames="top.cokernut.sample" 要监听的包名，过滤作用
+         android:settingsActivity="packname.android.accessibility.ServiceSettingsActivity" packname写自己App的包名
+    -->
