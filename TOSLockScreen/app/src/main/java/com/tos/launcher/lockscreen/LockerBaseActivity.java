@@ -1,32 +1,32 @@
 package com.tos.launcher.lockscreen;
 
-import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
+
+import com.badlogic.gdx.backends.android.AndroidApplication;
+import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
 /**
  * Created by x002 on 2017/3/1.
  */
 
-public class LockerBaseActivity extends Activity {
-    TextView unLock;
+public class LockerBaseActivity extends AndroidApplication {
+//    TextView unLock;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lockscreen);
-        unLock= (TextView) findViewById(R.id.unLock);
-        unLock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                unlockDevice();
-            }
-        });
+        //setContentView(R.layout.activity_lockscreen);
+//        unLock= (TextView) findViewById(R.id.unLock);
+//        unLock.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                unlockDevice();
+//            }
+//        });
         try {
             KeyguardManager manager = (KeyguardManager) this.getSystemService(this.KEYGUARD_SERVICE);
             KeyguardManager.KeyguardLock keyguardLock = manager.newKeyguardLock("");
@@ -57,6 +57,11 @@ public class LockerBaseActivity extends Activity {
             }
 
         }
+
+        // and run the application...
+        AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+        config.useImmersiveMode = true;
+        initialize(new MainGame(), config);
     }
 
     // Handle events of calls and unlock screen if necessary
