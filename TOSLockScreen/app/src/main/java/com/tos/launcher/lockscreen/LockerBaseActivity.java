@@ -61,7 +61,7 @@ public class LockerBaseActivity extends AndroidApplication {
         // and run the application...
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.useImmersiveMode = true;
-        initialize(new MainGame(), config);
+        initialize(new SuperspineboyTheme(), config);
     }
 
     // Handle events of calls and unlock screen if necessary

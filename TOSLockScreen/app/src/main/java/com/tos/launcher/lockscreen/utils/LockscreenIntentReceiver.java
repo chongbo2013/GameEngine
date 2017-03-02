@@ -25,7 +25,7 @@ public class LockscreenIntentReceiver extends BroadcastReceiver {
 
     // Display lock screen
     private void start_lockscreen(Context context) {
-        Intent mIntent = new Intent(context, LockScreen3dActivity.class);
+        Intent mIntent = new Intent("com.tos.screenlock");
         mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(mIntent);
     }
