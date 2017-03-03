@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.tos.launcher.lockscreen.superspineboy.SuperspineboyTheme;
 
 /**
  * Created by x002 on 2017/3/1.
@@ -34,6 +35,7 @@ public class LockerBaseActivity extends AndroidApplication {
         } catch (Exception e) {
 
         }
+
 
 
         // unlock screen in case of app get killed by system
